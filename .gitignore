@@ -1,3 +1,13 @@
+# VulnLab only — everything else in testing_env is separate projects
+/*
+!/docker-compose.yml
+!/README.md
+!/.gitignore
+!/nexus/
+!/vuln-webapp/
+!/vuln-webapp-medium/
+!/vuln-webapp-hard/
+
 # Python
 __pycache__/
 *.pyc
