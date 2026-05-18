@@ -1,8 +1,0 @@
-{
-  "error": {
-    "message": "Invalid 'video_id': 'generations'. Expected an ID that begins with 'video'.",
-    "type": "invalid_request_error",
-    "param": "video_id",
-    "code": "invalid_value"
-  }
-}

@@ -1,3 +1,0 @@
-https://api.phemex.com/phemex-withdraw/wallets/api/createWithdraw
-https://img.phemex.com/v1/46571325-e7ff-4b57-9=94-3b3dbb5dda72/twitter.png
-https://img.phemex.com/v1/5d1f6a06-8e3b-44c1-9cef=a945b899ffd6/instagram.png

@@ -1,2 +1,0 @@
-https://api.openai.com/v1/chat/completions3sk-Q7f6TocQTDdDs7NWOsNGT3BlbkFJHm15jPNCU6YRGBf7GHAZm
-https://api.openai.com/v1/chat/completionsfsk-PDFzaLwR8uxncmZ4I3k6T3BlbkFJjMYxzQt8dVr5txFN5RD0J
