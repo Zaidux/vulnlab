@@ -1,0 +1,81 @@
+services:
+
+  nexus:
+    build: ./nexus
+    ports:
+      - "127.0.0.1:7070:7070"
+    depends_on:
+      - easy-nginx
+      - medium-nginx
+      - hard-gateway
+    networks:
+      - vulnlab
+
+  easy:
+    build: ./vuln-webapp/flask
+    expose:
+      - "5000"
+    networks:
+      - vulnlab
+
+  easy-nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./vuln-webapp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./vuln-webapp/nginx/victim.html:/usr/share/nginx/html/victim.html:ro
+    depends_on:
+      - easy
+    networks:
+      - vulnlab
+
+  medium:
+    build: ./vuln-webapp-medium/flask
+    expose:
+      - "5000"
+    networks:
+      - vulnlab
+
+  medium-nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./vuln-webapp-medium/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./vuln-webapp-medium/nginx/victim.html:/usr/share/nginx/html/victim.html:ro
+    depends_on:
+      - medium
+    networks:
+      - vulnlab
+
+  hard-api:
+    build: ./vuln-webapp-hard/api
+    expose:
+      - "5001"
+    depends_on:
+      - hard-internal
+    networks:
+      - vulnlab
+
+  hard-internal:
+    build: ./vuln-webapp-hard/internal
+    expose:
+      - "5002"
+    networks:
+      - vulnlab
+
+  hard-gateway:
+    image: nginx:1.27-alpine
+    ports:
+      - "127.0.0.1:9191:9191"
+    volumes:
+      - ./vuln-webapp-hard/gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - hard-api
+    networks:
+      - vulnlab
+
+networks:
+  vulnlab:
+    driver: bridge

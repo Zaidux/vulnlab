@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Victim Simulator</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; background: #f5f5f5; }
+    .card { background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 1.5em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 640px; margin: auto; }
+    h1 { color: #c0392b; margin-top: 0; }
+    .note { background: #fff3cd; border: 1px solid #ffc107; padding: 1em;
+            border-radius: 6px; margin: 1em 0; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>🕵️ Victim Simulator</h1>
+  <p>This page simulates <strong>another user</strong> browsing the site
+     after a cache-poisoning attack has been planted.</p>
+
+  <div class="note">
+    <strong>Simulated action:</strong> navigating to the cache-poisoned homepage.
+  </div>
+
+  <p>In a real attack, the victim would visit the poisoned URL in their
+     browser (with no malicious headers).  Nginx would serve them the
+     <strong>cached, poisoned response</strong> — which loads JavaScript
+     from the attacker's origin.</p>
+
+  <p>The attacker-controlled script could then:</p>
+  <ol>
+    <li>Harvest cookies / session tokens</li>
+    <li>Inject a second-stage XSS payload</li>
+    <li>Trigger <code>/run?cmd=...</code> for RCE</li>
+  </ol>
+
+  <p><a href="/">Visit the (potentially poisoned) homepage →</a></p>
+</div>
+</body>
+</html>

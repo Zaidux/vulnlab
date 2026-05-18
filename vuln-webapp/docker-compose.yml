@@ -1,0 +1,24 @@
+services:
+
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "127.0.0.1:8080:8080"       # localhost only
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/victim.html:/usr/share/nginx/html/victim.html:ro
+    depends_on:
+      - flask
+    networks:
+      - vulnnet
+
+  flask:
+    build: ./flask
+    expose:
+      - "5000"
+    networks:
+      - vulnnet
+
+networks:
+  vulnnet:
+    driver: bridge

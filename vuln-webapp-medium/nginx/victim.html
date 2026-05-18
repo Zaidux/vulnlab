@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DevBlog — Reader View</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f0f2f5; color: #1a1a1a; }
+    .container { max-width: 720px; margin: 2em auto; padding: 0 1em; }
+    .card { background: #fff; border-radius: 10px; padding: 2em;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    h1 { font-size: 1.6em; margin-bottom: 0.5em; color: #1a56db; }
+    p { line-height: 1.6; margin: 0.8em 0; color: #555; }
+    .tag { display: inline-block; background: #e8f0fe; color: #1a56db;
+           font-size: 0.8em; padding: 3px 10px; border-radius: 12px; }
+    hr { border: none; border-top: 1px solid #e5e7eb; margin: 1.5em 0em 0; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h1>📄 Reader View</h1>
+    <p>You're simulating what happens when an ordinary visitor navigates to the homepage.</p>
+    <hr>
+    <p><strong>What to watch for:</strong> If the cache has been poisoned, this
+       "innocent" visit loads external resources from an untrusted origin.</p>
+    <p><span class="tag">cache-aware</span>
+    <span class="tag">no-custom-headers</span></p>
+    <p><a href="/" style="color:#1a56db;">→ Visit the DevBlog homepage</a></p>
+  </div>
+</div>
+</body>
+</html>

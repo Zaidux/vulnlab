@@ -1,0 +1,2 @@
+DANGLING CNAME: onboard.openai.com -> onboard.api.openai.com.
+DANGLING CNAME: arena.openai.com -> arena-frontend.rapid.openai.org.

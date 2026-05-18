@@ -1,0 +1,25 @@
+HTTP/2 200 
+age: 32
+cache-control: public, max-age=0, must-revalidate
+content-security-policy: default-src 'self';  script-src 'self' 'unsafe-eval' https://*.vercel-scripts.com https://*.fun.xyz https://rpc.walletconnect.org;  script-src-elem 'self' 'unsafe-inline' https://va.vercel-scripts.com;  style-src 'self' 'unsafe-inline';  img-src 'self' data: blob: https://*.ctfassets.net https://images.lumacdn.com https://cdn-assets.molandak.org https://*.fun.xyz https://logo.moralis.io https://logos.covalenthq.com https://sdk-cdn.fun.xyz https://*.swapped.com;  media-src 'self' data: blob: https://*.molandak.org https://*.ctfassets.net;  font-src 'self' data: https://fonts.reown.com;  connect-src 'self' https://*.fun.xyz wss://*.fun.xyz https://*.walletconnect.org wss://*.walletconnect.org https://*.monadinfra.com https://*.moonpay.com https://browser-intake-datadoghq.com https://api.web3modal.org https://proxy-mn.gmonads.com https://*.coinbase.com https://*.quiknode.pro https://*.base.org https://*.eth https://*.drpc.org wss://*.drpc.org https://*.llamarpc.com https://*.publicnode.com https://*.gateway.tenderly.co https://*.meowrpc.com https://*.merkle.io https://*.monad.xyz https://*.hyperliquid.xyz https://*.hypurrscan.io https://*.conduit.xyz https://1rpc.io https://0xrpc.io https://hyperliquid-json-rpc.stakely.io https://rpc.hyperlend.finance https://rpc.ethereal.trade https://mainnet.zklighter.elliot.ai https://api.mainnet-beta.solana.com https://blockstream.info https://api.zan.top https://bsc.blockrazor.xyz https://scroll-mainnet.public.blastapi.io https://hyperliquid.rpc.blxrbdn.com https://*.relay.link https://ipapi.co https://polygon-rpc.com https://arb1.arbitrum.io https://mainnet.optimism.io https://56.rpc.thirdweb.com https://api.mainnet.abs.xyz;  object-src 'none';  base-uri 'self';  form-action 'self';  frame-ancestors 'none';  frame-src 'self' https://auth.privy.io https://verify.walletconnect.org https://*.swapped.com https://bridge.withpersona.com;  upgrade-insecure-requests;
+content-type: text/html; charset=utf-8
+date: Thu, 14 May 2026 21:54:23 GMT
+etag: "6qzozfzmxje3ag"
+link: <https://app.monad.xyz/>; rel="alternate"; hreflang="en", <https://app.monad.xyz/zh>; rel="alternate"; hreflang="zh", <https://app.monad.xyz/ko>; rel="alternate"; hreflang="ko", <https://app.monad.xyz/>; rel="alternate"; hreflang="x-default"
+permissions-policy: camera=(), microphone=(), geolocation=(), browsing-topics=(), interest-cohort=(), payment=(), autoplay=(self), fullscreen=(self)
+referrer-policy: strict-origin-when-cross-origin
+server: Vercel
+set-cookie: NEXT_LOCALE=en; Path=/; SameSite=lax
+strict-transport-security: max-age=63072000
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-matched-path: /en
+x-nextjs-prerender: 1
+x-nextjs-stale-time: 300
+x-powered-by: Next.js
+x-vercel-cache: HIT
+x-vercel-id: lhr1::iad1::rx7f8-1778795695412-6d8c672c2f05
+x-xss-protection: 1; mode=block
+content-length: 657569
+

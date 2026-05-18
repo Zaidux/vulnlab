@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VulnLab Nexus</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#f0f2f5;color:#1a1a1a;padding:2em;min-height:100vh}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:2em;margin-bottom:.3em}
+.sub{color:#6b7280;margin-bottom:2em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5em}
+.card{background:#fff;border-radius:12px;padding:1.5em;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.card h2{font-size:1.3em;margin-bottom:.3em}
+.card .port{color:#6b7280;font-size:.85em;font-family:monospace;margin-bottom:.5em}
+.card p{color:#4b5563;font-size:.95em;line-height:1.5}
+.badge{margin:1em 0;padding:.75em;border-radius:8px;font-size:.85em}
+.badge.pending{background:#fef3c7;color:#92400e}
+.badge.done{background:#d1fae5;color:#065f46}
+.badge.error{background:#fee2e2;color:#991b1b}
+.vulns{margin-top:1em;font-size:.85em}
+.vulns span{display:inline-block;padding:2px 8px;border-radius:6px;margin:2px}
+.vulns .yes{background:#d1fae5;color:#065f46}
+.vulns .no{background:#f3f4f6;color:#6b7280}
+.token{margin-top:1em;padding:.75em;background:#1a1a2e;color:#e2e8f0;border-radius:8px;font-family:monospace;font-size:.85em;word-break:break-all}
+.footer{margin-top:2em;text-align:center;color:#9ca3af;font-size:.85em}
+.footer a{color:#2563eb}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🚩 VulnLab</h1>
+<div class="sub">Multi-mode security exploration laboratory</div>
+<div class="grid">
+{% for c in cards %}
+<div class="card">
+<h2>{{ c.name }}</h2>
+<div class="port">127.0.0.1:{{ c.port }}</div>
+<p>{{ c.desc }}</p>
+{% set s = c.status %}
+{% if s.get('all_done') %}
+<div class="badge done">✅ All completed</div>
+{% elif s.get('error') %}
+<div class="badge error">⛔ Unreachable</div>
+{% else %}
+<div class="badge pending">⏳ In progress</div>
+{% endif %}
+<div class="vulns">
+{% for k in ['cache','xss','stored','rce','jwt','ssrf','flag'] %}
+{% if k in s %}
+<span class="{{ 'yes' if s[k] else 'no' }}"">{{ k }}</span>
+{% endfor %}
+</div>
+{% if c.token %}
+<div class="token">{{ c.token }}</div>
+{% endif %}
+</div>
+{% endfor %}
+</div>
+<div class="footer">
+<p>Post to <code>/progress/complete/&#123;vuln&#125;</code> on each mode to mark it done.</p>
+<p><a href="/api/status">JSON status endpoint →</a></p>
+</div>
+</div>
+</body>
+</html>
